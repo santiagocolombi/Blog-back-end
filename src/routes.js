@@ -11,6 +11,8 @@ router.get('/posts/:id', PostsController.show);
 router.get('/item', PostsController.getItems);
 router.get('/personagens', PostsController.getPersonagens);
 router.get('/artefatos', PostsController.getArtefatos);
+router.get('/guia', PostsController.getGuia);
+
 
 
 

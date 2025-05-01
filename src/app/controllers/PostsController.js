@@ -127,7 +127,21 @@ class PostsController {
             });
         }
     }
+    async getGuia(request, response) {
+        try {
+          const guia = await PostsRepository.getGuia();
+          if (!guia || guia.length === 0) {
+            return response.status(200).json([]);
+          }
+          return response.json(guia);
+        } catch (error) {
+          return response.status(500).json({
+            error: 'Failed to fetch guia',
+            details: error.message,
+          });
+        }
+      }
+    }      
     
-    }
 
 module.exports = new PostsController();

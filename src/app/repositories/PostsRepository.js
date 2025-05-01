@@ -75,7 +75,15 @@ async getArtefatos() {
   `);
   return rows;
 }
-
+  async getGuia(){
+    const rows = await db.query(`
+      SELECT * FROM posts
+      WHERE category = 'guia'
+      ORDER BY created_at DESC
+      `);
+      return rows;
+  }
+  
 }
 
 module.exports = new PostsRepository();
